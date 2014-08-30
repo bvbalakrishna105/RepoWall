@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<databaseconfing>
+	<database name="postgresql">
+		<databaseName>sampleTable</databaseName>
+		<databasedriver>org.postgresql.Driver</databasedriver>
+		<url>jdbc:postgresql://</url>
+		<ipaddress>localhost</ipaddress>
+		<port>5432</port>
+		<username>postgres</username>
+		<password>asdf@123</password>
+	</database>
+	
+	<database name="mysql">
+		<databaseName>sampleTable</databaseName>
+		<databasedriver>org.postgresql.Driver</databasedriver>
+		<url>jdbc:postgresql://</url>
+		<ipaddress>localhost</ipaddress>
+		<port>5432</port>
+		<username>postgres</username>
+		<password>asdf@123</password>
+	</database>
+</databaseconfing>
