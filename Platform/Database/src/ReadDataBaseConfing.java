@@ -47,6 +47,7 @@ public class ReadDataBaseConfing {
 
             String currentPath = System.getProperty("user.dir");
             String specialDelimiter = "#";
+            String dbDelimiter = "$";
             currentPath = currentPath.concat("\\Platform\\Settings\\config.xml");
             File fileConfig = new File(currentPath);
             if (!fileConfig.isFile()) {
@@ -80,7 +81,7 @@ public class ReadDataBaseConfing {
                     String passWord = eElement.getElementsByTagName("password").item(0).getTextContent();
 
                     readDBConfigString = dbConnectionString.concat(specialDelimiter).concat(dbName);
-                    readDBConfigString = readDBConfigString.concat(specialDelimiter).concat(userName).concat(specialDelimiter).concat(passWord).concat(specialDelimiter).concat(dbDriver);
+                    readDBConfigString = readDBConfigString.concat(specialDelimiter).concat(userName).concat(specialDelimiter).concat(passWord).concat(specialDelimiter).concat(dbDriver).concat(dbDelimiter);
                 }
             }
         } catch (Exception ee) {

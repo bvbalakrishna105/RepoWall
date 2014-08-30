@@ -76,6 +76,13 @@ public class sample {
             ee.getStackTrace();
         }
         
+      String Str = new String("Welcome-to-Tutorialspoint.com");
+
+      System.out.println("Return Value :" );
+      for (String retval: Str.split("-", 0)){
+         System.out.println(retval);
+      }
+        
     }
     
 }
