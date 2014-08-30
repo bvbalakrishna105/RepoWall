@@ -1,4 +1,3 @@
-
 /**
  * *************************************************************************
  */
@@ -21,6 +20,9 @@
 /**
  * *************************************************************************
  */
+
+package Database.src;
+
 import java.io.File;
 import javax.swing.text.View;
 import javax.xml.parsers.DocumentBuilder;
@@ -61,7 +63,7 @@ public class ReadDataBaseConfing {
 
             NodeList nList = doc.getElementsByTagName("database");
 
-            for (int temp = 0; temp < nList.getLength(); temp++) {
+            for (int temp = 0; temp < nList.getLength() ; temp++) {
 
                 Node nNode = nList.item(temp);
                 if (nNode.getNodeType() == Node.ELEMENT_NODE) {
@@ -80,7 +82,7 @@ public class ReadDataBaseConfing {
                     String userName = eElement.getElementsByTagName("username").item(0).getTextContent();
                     String passWord = eElement.getElementsByTagName("password").item(0).getTextContent();
 
-                    readDBConfigString = dbConnectionString.concat(specialDelimiter).concat(dbName);
+                    readDBConfigString += dbConnectionString.concat(specialDelimiter).concat(dbName);
                     readDBConfigString = readDBConfigString.concat(specialDelimiter).concat(userName).concat(specialDelimiter).concat(passWord).concat(specialDelimiter).concat(dbDriver).concat(dbDelimiter);
                 }
             }

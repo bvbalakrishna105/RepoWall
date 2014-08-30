@@ -47,31 +47,37 @@ public class DataBaseManager {
     }
 
     public void deserializationDBConfiguration(String pathConfigString, String dbName) {
-        if (!pathConfigString.equals("")) {
-            String[] parts = pathConfigString.split("$");
+        try{
+            if (!pathConfigString.equals("")) {
+            String[] parts = pathConfigString.split("$",3);  
+            String[] postgresPart = parts[0].split("#",5);
+            String[] mysqlPart = parts[1].split("#",5);
             
-            String[] postgresPart = parts[0].split("#");
             if (postgresPart[1].equals(dbName)) {
                 m_dbConnectionString = postgresPart[0];
                 m_userName = postgresPart[2];
                 m_passWord = postgresPart[3];
                 m_dbDriver = postgresPart[4];
                 
-//                if(!mp_databaseHandler->connectDataBase(m_dbConnectionString,m_userName,m_passWord,m_dbDriver)){
-//                    return;
-//                }
+                System.out.println(m_dbConnectionString);
+                System.out.println(m_userName);
+                System.out.println(m_passWord);
+                System.out.println(m_dbDriver);
             }
-            String[] mysqlPart = parts[1].split("#");
-            if (mysqlPart[1].equals(dbName)) {
-                m_dbConnectionString = mysqlPart[0];
-                m_userName = mysqlPart[2];
-                m_passWord = mysqlPart[3];
-                m_dbDriver = mysqlPart[4];
-            }
+//            
+//            if (mysqlPart[1].equals(dbName)) {
+//                m_dbConnectionString = mysqlPart[0];
+//                m_userName = mysqlPart[2];
+//                m_passWord = mysqlPart[3];
+//                m_dbDriver = mysqlPart[4];
+//            }
         } else {
             System.out.println("Reading from Database Configuratio is not possible");
             return;
         }
+            
+        }catch(Exception ee){
+            ee.getStackTrace();
+        }
     }
-    
 }

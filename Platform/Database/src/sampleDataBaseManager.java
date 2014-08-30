@@ -1,7 +1,3 @@
-
-import Database.src.DataBaseHandler;
-
-
 /**
  * *************************************************************************
  */
@@ -24,6 +20,8 @@ import Database.src.DataBaseHandler;
 /**
  * *************************************************************************
  */
+
+package Database.src;
 public class sampleDataBaseManager {
     
     public String m_dbConnectionString;
@@ -31,8 +29,8 @@ public class sampleDataBaseManager {
     public String m_userName;
     public String m_passWord;
     public String m_dbDriver;
-    ReadDataBaseConfing mp_readDBConfig;
     DataBaseHandler mp_databaseHandler;
+    ReadDataBaseConfing mp_readDBConfig;
 
     public sampleDataBaseManager(String dbName) {
         m_dbConnectionString = "";
