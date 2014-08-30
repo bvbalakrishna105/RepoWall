@@ -21,9 +21,9 @@ public class sample {
     public static void main(String[] args) {
         try{
             
-            
-            File fileConfig = new File("..//Settings//config.xml");
-            
+            String  currentPath = System.getProperty("user.dir");
+            currentPath = currentPath.concat("\\Platform\\Settings\\config.xml");
+            File fileConfig = new File(currentPath);
             if(!fileConfig.isFile()){
                 return;
             }
