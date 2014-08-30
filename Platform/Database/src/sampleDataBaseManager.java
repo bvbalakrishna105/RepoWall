@@ -1,4 +1,7 @@
 
+import Database.src.DataBaseHandler;
+
+
 /**
  * *************************************************************************
  */
@@ -29,6 +32,7 @@ public class sampleDataBaseManager {
     public String m_passWord;
     public String m_dbDriver;
     ReadDataBaseConfing mp_readDBConfig;
+    DataBaseHandler mp_databaseHandler;
 
     public sampleDataBaseManager(String dbName) {
         m_dbConnectionString = "";
@@ -37,6 +41,7 @@ public class sampleDataBaseManager {
         m_passWord = "";
         m_dbDriver = "";
         mp_readDBConfig = new ReadDataBaseConfing();
+        mp_databaseHandler = new DataBaseHandler();
     }
 
     public void setDBConfigData(String dbName) {

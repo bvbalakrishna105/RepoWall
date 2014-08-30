@@ -27,6 +27,7 @@ public class DataBaseManager {
     public String m_passWord;
     public String m_dbDriver;
     ReadDataBaseConfing mp_readDBConfig;
+    DataBaseHandler mp_databaseHandler;
 
     public DataBaseManager(String dbName) {
         m_dbConnectionString = "";
@@ -35,6 +36,7 @@ public class DataBaseManager {
         m_passWord = "";
         m_dbDriver = "";
         mp_readDBConfig = new ReadDataBaseConfing();
+        mp_databaseHandler = new DataBaseHandler();
     }
 
     public void setDBConfigData(String dbName) {
@@ -54,6 +56,10 @@ public class DataBaseManager {
                 m_userName = postgresPart[2];
                 m_passWord = postgresPart[3];
                 m_dbDriver = postgresPart[4];
+                
+//                if(!mp_databaseHandler->connectDataBase(m_dbConnectionString,m_userName,m_passWord,m_dbDriver)){
+//                    return;
+//                }
             }
             String[] mysqlPart = parts[1].split("#");
             if (mysqlPart[1].equals(dbName)) {
